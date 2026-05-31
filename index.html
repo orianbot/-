@@ -1,0 +1,232 @@
+<style>
+  /* 鎖定全域背景與字體 */
+  .awos-fb-desktop-wrapper {
+    background-color: #f0f2f5; /* FB 經典灰底 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #050505;
+    min-height: 100vh;
+    margin: -8px; /* 抵銷 body 預設 margin */
+    padding-bottom: 40px;
+  }
+
+  /* 頂部 Navbar */
+  .awos-fb-nav {
+    position: sticky;
+    top: 0;
+    height: 56px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 100;
+  }
+  .awos-fb-logo {
+    width: 40px;
+    height: 40px;
+    background-color: #0866FF; /* Meta 官方藍 */
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 10px;
+    padding-top: 4px; /* 微調 f 的垂直置中 */
+    box-sizing: border-box;
+  }
+  .awos-fb-search {
+    background-color: #f0f2f5;
+    border-radius: 50px;
+    height: 40px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    color: #65676B;
+    font-size: 15px;
+    width: 240px;
+  }
+
+  /* 主體三欄式佈局 (左側空白/中央貼文/右側 Footer) */
+  .awos-fb-body {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 24px auto 0;
+    padding: 0 16px;
+  }
+
+  /* 中央動態牆 */
+  .awos-fb-feed {
+    width: 680px; /* 電腦版貼文標準寬度 */
+    margin: 0 32px;
+  }
+
+  /* 貼文卡片本身 */
+  .awos-fb-post {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 16px;
+  }
+  .awos-fb-post-header {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+  }
+  .awos-fb-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 12px;
+    object-fit: cover;
+    border: 1px solid #ebebeb;
+  }
+  .awos-fb-name {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .awos-fb-name span {
+    font-weight: normal;
+    color: #65676B;
+  }
+  .awos-fb-meta {
+    font-size: 13px;
+    color: #65676B;
+    margin-top: 2px;
+  }
+  .awos-fb-text {
+    padding: 4px 16px 16px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .awos-fb-photo {
+    width: 100%;
+    background: #f0f2f5;
+    border-top: 1px solid #ebedf0;
+    border-bottom: 1px solid #ebedf0;
+  }
+  .awos-fb-photo img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+  }
+  .awos-fb-stats {
+    padding: 10px 16px;
+    color: #65676B;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ced0d4;
+    margin: 0 16px;
+  }
+  .awos-fb-actions {
+    display: flex;
+    padding: 4px 16px;
+  }
+  .awos-fb-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    margin: 4px 0;
+    color: #65676B;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .awos-fb-btn:hover {
+    background-color: #f2f2f2;
+  }
+
+  /* 右側資訊與 Footer */
+  .awos-fb-right-sidebar {
+    width: 360px;
+    display: none; /* 預設隱藏，大螢幕才顯示 */
+  }
+  .awos-fb-footer {
+    color: #65676B;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 16px 0;
+  }
+  .awos-fb-footer a {
+    color: #65676B;
+    text-decoration: none;
+  }
+  .awos-fb-footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* 螢幕夠寬時顯示右側 Sidebar */
+  @media (min-width: 1100px) {
+    .awos-fb-right-sidebar {
+      display: block;
+    }
+  }
+</style>
+
+<div class="awos-fb-desktop-wrapper">
+  
+  <div class="awos-fb-nav">
+    <div class="awos-fb-logo">f</div>
+    <div class="awos-fb-search">
+      🔍 搜尋 Facebook
+    </div>
+  </div>
+
+  <div class="awos-fb-body">
+    
+    <div class="awos-fb-feed">
+      <div class="awos-fb-post">
+        <div class="awos-fb-post-header">
+          <img src="C:/Users/USER/Downloads/Gemini_Generated_Image_3y10ab3y10ab3y10.png" alt="Avatar" class="awos-fb-avatar">
+          <div>
+            <div class="awos-fb-name">CO2 <span>在</span> <strong>打卡系統</strong></div>
+            <div class="awos-fb-meta">2026年5月30日 · 🌎</div>
+          </div>
+        </div>
+        
+        <div class="awos-fb-text">
+          成功解鎖本月免運成就！✨<br>
+          這是一個完美的電腦版打卡檢視頁面，沒有後端干擾，純粹用來展示美好的回憶。<br><br>
+          #CO2 #時間的痕跡 #純淨體驗
+        </div>
+        
+        <div class="awos-fb-photo">
+          <img src="C:/Users/USER/Downloads/Gemini_Generated_Image_3y10ab3y10ab3y10.png" alt="Check-in Photo">
+        </div>
+
+        <div class="awos-fb-stats">
+          <span>👍❤️ 88 人</span>
+          <span>12 則留言 · 3 次分享</span>
+        </div>
+        
+        <div class="awos-fb-actions">
+          <div class="awos-fb-btn">👍 讚</div>
+          <div class="awos-fb-btn">💬 留言</div>
+          <div class="awos-fb-btn">🔗 分享</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="awos-fb-right-sidebar">
+      <div class="awos-fb-footer">
+        <a href="#">隱私政策</a> · 
+        <a href="#">使用條款</a> · 
+        <a href="#">廣告</a> · 
+        <a href="#">Ad Choices</a> · 
+        <a href="#">Cookie</a> · 
+        <a href="#">更多</a><br>
+        Meta © 2026
+      </div>
+    </div>
+
+  </div>
+</div>
